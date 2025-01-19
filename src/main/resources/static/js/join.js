@@ -56,13 +56,14 @@ function confirmId() {
     if(userId.trim().length < 3 || userId.trim().length > 8) {
         $('#confirmId').css('color', 'red')
         $('#confirmId').html("아이디는 3~8글자 사이로 입력해주세요.")
-        return false;
+        return;
     }
-    
+    $('#confirmId').html('')
+
     // 아이디는 중복되나요?
     $.ajax ({
-        url: "/user/idCheck",
-        method: "POST",
+        url: '/user/idCheck',
+        method: 'POST',
         data: {"userId" : userId},
         success : function(resp) {
             if(resp) {
