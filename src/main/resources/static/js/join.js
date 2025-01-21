@@ -58,7 +58,7 @@ function confirmId() {
         $('#confirmId').html("아이디는 3~8글자 사이로 입력해주세요.")
         return;
     }
-    $('#confirmId').html('')
+    // $('#confirmId').html('')
 
     // 아이디는 중복되나요?
     $.ajax ({

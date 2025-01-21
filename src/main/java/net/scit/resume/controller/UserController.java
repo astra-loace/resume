@@ -38,7 +38,7 @@ public class UserController {
 		
 		boolean result = userService.existId(userId);
 		
-		return true;	
+		return result;	
 	}
 	
 	/**
@@ -59,9 +59,8 @@ public class UserController {
 	 * @return
 	 * */
 	@GetMapping("/login")
-	public String login(
+	public String login(Model model,
 			@RequestParam(name="error", required = false) String error
-			, Model model
 			) {
 		model.addAttribute("error", error);
 		model.addAttribute("errMessage", "아이디와 비밀번호를 확인하세요.");
